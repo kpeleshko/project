@@ -1,0 +1,128 @@
+
+
+
+.steps {
+    position: relative;
+    margin: 0 10vw 0 0;
+
+    @include respond(phone) {
+        margin: 0 5rem 0 1rem;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: .5rem;
+        left: 0rem;
+        height: 100%;
+        width: .1rem;
+        background-color: var(--color-main);
+    }
+
+   &__item {
+       position: relative;
+        padding: 0 0 10rem 7rem;
+        align-items: flex-start;
+
+        &:last-child {
+            padding: 0 0 0 7rem;
+        }
+   }
+
+   &__title {
+       line-height: 4rem;
+   }
+    
+    &__number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: .5rem;
+        left: -1.5rem;
+        height: 3rem;
+        width: 3rem;
+        opacity: 1 !important;
+        border: 1px solid var(--color-main);
+        border-radius: 50%;
+        background-color: var(--color-secondary);
+        color: rgba(white, .2);
+    }
+
+    &__desc {
+        display: inline-block;
+        max-width: 80%;
+        margin-top: 2rem;
+        line-height: 2.5rem;
+    
+        @include respond(phone) {
+            max-width: 100%;
+        }
+    }
+
+    &__desc,
+    &__number {
+        font-size: 1.2rem;
+    }
+
+    &__information {
+        display: block;
+        margin-top: -3rem;
+        margin-left: 6.9rem;
+        font-size: 1.2rem;
+        width: 50rem;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+
+    &__skills-link {
+        text-transform: none;
+        position: relative;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 2.5rem;
+
+        border-bottom: 1px solid white;
+        cursor: pointer;
+
+        &:hover .steps__skills-img {
+            display: block;
+        }
+    }
+
+    &__skills-img {
+        z-index: 5;
+        display: none;
+        position: absolute;
+        top: -15rem;
+        left: 50%;
+        width: 20rem;
+        transform: translateX(-50%);
+    }
+}
+
+
+.fade-in > * {
+    transition: all .3s ease-in;
+
+    &:nth-child(2),
+    &:nth-child(3) {
+        transform: translateX(5rem);
+        opacity: 0;
+    }
+}
+
+.active > * {
+    &:nth-child(2),
+    &:nth-child(3) {
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+
+    &:first-child {
+        color: var(--color-secondary);
+        background-color: var(--color-main);
+    }
+}

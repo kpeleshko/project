@@ -1,0 +1,61 @@
+.changer {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    margin-bottom: 5rem;
+
+    &__wrapper {
+        display: flex;
+        padding-bottom: 5rem;
+    }
+
+    &__color {
+        position: relative;
+        margin-right: 3rem;
+        cursor: pointer;
+        transition: transform .25s ease-out;
+        
+        &:hover {transform: translateY(-.5rem);}
+    }
+
+    &__color-main {
+        display: inline-block;
+        height: 4rem;
+        width: 4rem;
+    
+        &--1 { background-color: white;}
+        &--2 { background-color: rgb(32, 29, 29)}
+        &--3 { background-color: rgb(87, 194, 240);}
+    }
+    
+    &__color-secondary {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        display: inline-block;
+        height: 3.5rem;
+        width: 3.5rem;
+        border: 1px solid var(--color-main);
+    
+        &--1 { background-color: black;}
+        &--2 { background-color: rgb(179, 152, 162);}
+        &--3 { background-color: rgb(29, 18, 4);}
+    }
+}
+
+
+
+
+.social {
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+    &__icon {
+        margin-right: 1rem;
+        height: 4.5rem;
+        width: 4.5rem;
+        fill: var(--color-main);
+        transition: transform .25s ease-out;
+        
+        &:hover {transform: translateY(-.5rem);}
+    }
+}

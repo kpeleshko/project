@@ -1,0 +1,93 @@
+// @font-face {
+//     font-family: 'Muli';
+//     src: local('Multi Regular'),
+//          local('Multi-Regular'),
+//          url('../../../fonts/Muli-Regular.woff') format('woff'),
+//          url('../../../fonts/Muli-Regular.woff2') format('woff2');
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Muli';
+//     src: local('Multi Bold'),
+//          local('Multi-Bold'),
+//          url('../../../fonts/Muli-Bold.woff') format('woff'),
+//          url('../../../fonts/Muli-Bold.woff2') format('woff2');
+//     font-weight: 700;
+//     font-style: normal;
+// }
+
+
+.section-title-wrapper {
+    position: relative;
+    height: 100vh;
+
+    @include respond(tab-port) {
+        height: 50vh;
+    }
+}
+
+.section-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10%);
+
+    &--small-mr {
+        top: 38vh;
+    }
+
+    &__text {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 12rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 10.8rem;
+        font-family: 'Playfair Display', serif;
+        color: var(--color-main);
+
+        &--blank {
+            color: var(--color-secondary);
+            text-shadow: 1px 0 0 var(--color-main), -1px 0 0 var(--color-main), 0 1px 0 var(--color-main), 0 -1px 0 var(--color-main), 1px 1px var(--color-main), -1px -1px 0 var(--color-main), 1px -1px 0 var(--color-main), -1px 1px 0 var(--color-main);
+        }
+
+        @include respond(phone) {
+            font-size: 7rem;
+            line-height: 8.5rem;
+        }
+    }
+}
+
+
+.paragraph, p, a {
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 8rem;
+    letter-spacing: -.5px;
+    
+    &--width {
+        margin-left: 35vw;
+        width: 55vw;
+    }
+
+    &--blank {
+        font-size: 4rem;
+        color: var(--color-secondary);
+        text-shadow: 1px 0 0 var(--color-main), -1px 0 0 var(--color-main), 0 1px 0 var(--color-main), 0 -1px 0 var(--color-main), 1px 1px var(--color-main), -1px -1px 0 var(--color-main), 1px -1px 0 var(--color-main), -1px 1px 0 var(--color-main);
+    }
+
+    @include respond(phone) {
+        font-size: 4rem;
+        line-height: 7.5rem;
+    }
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 3rem 0 .5rem 0;
+}

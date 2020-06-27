@@ -1,0 +1,105 @@
+.portfolio {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 95vh;
+
+    @include respond(tab-port) {
+        display: none;
+    }
+
+    &__img--interior,
+    &__img--food,
+    &__img--booking {
+        display: none;
+    }
+
+    &__link {
+        align-self: flex-start;
+        display: inline-block;
+        margin-left: 30%;
+        margin-top: 1.5rem;
+        padding: .5rem;
+        font-size: 3.4rem;
+        line-height: 4rem;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &:hover ~ .portfolio__img-wrapper .portfolio__img {
+            animation: galleryShake .5s ease-in;
+        }
+
+        &--interior:hover ~ .portfolio__img-wrapper--large .portfolio__img--interior,
+        &--food:hover ~ .portfolio__img-wrapper--large .portfolio__img--food,
+        &--booking:hover ~ .portfolio__img-wrapper--large .portfolio__img--booking,
+
+        &--interior:hover ~ .portfolio__img-wrapper--medium .portfolio__img--interior,
+        &--food:hover ~ .portfolio__img-wrapper--medium .portfolio__img--food,
+        &--booking:hover ~ .portfolio__img-wrapper--medium .portfolio__img--booking,
+
+        &--interior:hover ~ .portfolio__img-wrapper--small .portfolio__img--interior,
+        &--food:hover ~ .portfolio__img-wrapper--small .portfolio__img--food,
+        &--booking:hover ~ .portfolio__img-wrapper--small .portfolio__img--booking {
+            display: block;
+        }
+    }
+
+
+    &__img-wrapper { 
+        position: absolute;
+        overflow: hidden;
+
+        &--large {
+            bottom: 1rem;
+            right: 0;
+            height: 32rem;
+            width: 55rem;
+            border: 5px solid var(--color-main);
+        }
+
+        &--medium {
+            top: 0;
+            left: 0;
+            height: 40rem;
+            width: 30rem;
+            background-color: var(--color-main);
+        }
+        &--small {
+            top: 5%;
+            right: 2rem;
+            height: 20rem;
+            width: 20rem;
+            border: 25px solid var(--color-main);
+        }
+    }
+}
+
+
+.portfolio-mobile {
+    padding: 10rem 2rem 40vh 2rem;
+    display: none;
+
+    @include respond(tab-port) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img-wrapper {
+        position: relative;
+        margin-top: 10rem;
+    }
+
+    &__link {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__img {
+        width: 55%;
+    }
+
+
+}

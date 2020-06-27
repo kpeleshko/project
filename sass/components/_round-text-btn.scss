@@ -1,0 +1,40 @@
+.round-text-btn {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--color-main);
+    transition: all .2s ease-in;
+    cursor: pointer;
+
+    &--sticky {
+        position: sticky;
+        top: 35vh;
+        left: 10vw;
+
+        @include respond(tab-port) {
+            margin-top: 25rem;
+           position: relative;
+           top: unset;
+           left: unset;
+        }
+    }
+
+    &:hover {
+        background-color: var(--color-secondary);
+    }
+
+    &:hover text{
+        fill: var(--color-main);
+    }
+}
+
+svg { 
+    width: 100%;
+}
+text { 
+    font-size: 6rem;
+	font-weight: 700; 
+	text-transform: uppercase;
+	letter-spacing: 21px;
+    fill: var(--color-secondary);
+}
